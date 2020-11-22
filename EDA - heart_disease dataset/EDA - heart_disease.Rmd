@@ -1,0 +1,33 @@
+---
+title: "EDA - gapminder dataset"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+```
+
+```{r}
+# Libraries
+library(funModeling)
+library(tidyverse)
+library(Hmisc)
+library(gapminder)
+```
+
+```{r}
+gapminder_raw <- gapminder::gapminder
+
+explore <- function(data) 
+  {
+    glimpse(data)
+    status(data)
+    freq(data, path_out ="./scripts") # da sistemare la path
+    # profiling_num(data)
+    # plot_num(data)
+    # describe(data)
+}
+
+explore(gapminder_raw) 
+```
+
